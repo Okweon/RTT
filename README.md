@@ -1,2 +1,2 @@
-# rtt_win
+# RTT
 Topic modeling tool
