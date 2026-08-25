@@ -1,0 +1,10 @@
+# network_analyzer.py dependencies
+# Install:  pip install -r requirements_network_analyzer.txt
+#
+# Verified with Python 3.11 and: networkx 3.4.2 / numpy 1.26.4 /
+# scipy 1.13.1 / matplotlib 3.9.2
+
+networkx>=2.8         # graph loading, degree/clustering/community/PageRank
+numpy>=1.21           # degree distribution arrays
+scipy>=1.7            # linear regression for the power-law fit
+matplotlib>=3.5       # 300 DPI publication figures

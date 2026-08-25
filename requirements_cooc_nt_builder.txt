@@ -1,0 +1,15 @@
+# cooc_nt_builder.py dependencies
+# Install:  pip install -r requirements_cooc_nt_builder.txt
+#
+# Verified with Python 3.11 and: pandas 2.2.3 / numpy 1.26.4 /
+# networkx 3.4.2 / scipy 1.13.1 / plotly 5.24.1 / pyvis 0.3.2
+
+pandas>=1.5           # matrix handling and CSV output
+numpy>=1.21           # diagonal handling, degree statistics
+networkx>=2.8         # graph construction, GML/GraphML/GEXF export
+scipy>=1.7            # sparse matrix product for the co-occurrence counts
+plotly>=5.10          # degree histogram in the report
+pyvis>=0.3.1          # interactive network page
+tqdm>=4.65            # progress bars
+# jinja2 renders the report template; it ships as a pyvis dependency.
+jinja2>=3.0

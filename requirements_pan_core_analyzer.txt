@@ -1,0 +1,11 @@
+# pan_core_analyzer.py dependencies
+# Install:  pip install -r requirements_pan_core_analyzer.txt
+#
+# Verified with Python 3.11 and: numpy 1.26.4 / pandas 2.2.3 /
+# scipy 1.13.1 / plotly 5.24.1 / tqdm 4.66.5
+
+numpy>=1.21           # accumulation curves, permutation RNG
+pandas>=1.5           # term-document matrix and output tables
+scipy>=1.7            # curve_fit for the Heaps' law fit
+plotly>=5.10          # interactive accumulation and null-distribution figures
+tqdm>=4.65            # permutation progress bar

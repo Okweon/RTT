@@ -1,0 +1,61 @@
+# RT-Tracker - all dependencies for the full pipeline
+#
+# Install:
+#   pip install -r requirements.txt
+#
+# To install only what one stage needs, use its own file instead, e.g.
+#   pip install -r requirements_ab_extractor.txt
+#
+# Verified with Python 3.11 and: numpy 1.26.4 / pandas 2.2.3 / scipy 1.13.1 /
+# biopython 1.84 / nltk 3.9.1 / gensim 4.3.3 / scikit-learn 1.5.2 /
+# umap-learn 0.5.7 / sentence-transformers 3.2.1 / networkx 3.4.2 /
+# matplotlib 3.9.2 / plotly 5.24.1 / pyvis 0.3.2 / wordcloud 1.9.4 /
+# openpyxl 3.1.5
+
+# --- core numerics ------------------------------------------------------------
+# gensim 4.x does not build against NumPy 2.x; keep numpy below 2 until it does.
+numpy>=1.23,<2
+pandas>=1.5
+scipy>=1.7
+tqdm>=4.65
+
+# --- literature retrieval -----------------------------------------------------
+biopython>=1.80              # Bio.Entrez, the NCBI E-utilities client
+
+# --- NLP / preprocessing ------------------------------------------------------
+nltk>=3.8                    # tokenizer, POS tagger, lemmatizer, stop words
+stop-words>=2018.7.23        # base English stop word list
+
+# --- topic modeling -----------------------------------------------------------
+gensim>=4.3                  # LDA and c_v coherence
+scikit-learn>=1.2            # CountVectorizer, k-means, silhouette
+umap-learn>=0.5              # 2D projection of document vectors
+# Required by tm_analyzer.py's default --method LDA_BERT (and by --method BERT).
+# Not needed for --method LDA.
+sentence-transformers>=2.2
+
+# --- networks -----------------------------------------------------------------
+networkx>=2.8                # graph construction and GML/GraphML/GEXF export
+
+# --- visualization ------------------------------------------------------------
+matplotlib>=3.6
+plotly>=5.10
+pyvis>=0.3.1                 # interactive network pages
+wordcloud>=1.9
+jinja2>=3.0                  # report templates (also a pyvis dependency)
+
+# --- file formats -------------------------------------------------------------
+openpyxl>=3.1                # reading .xlsx input in post_hoc_analyzer.py
+
+# ==============================================================================
+# Optional - the pipeline runs without these, with the noted effect.
+# ==============================================================================
+# Sentence-level language filter in tm_analyzer.py. Without it the filter is
+# skipped and every sentence is kept.
+# language-detector>=1.1
+
+# Typo correction in tm_analyzer.py, enabled with --use-typo-correction.
+# symspellpy>=6.7
+
+# Static PNG export of plotly charts, enabled with post_hoc_analyzer.py --png.
+# kaleido>=0.2.1

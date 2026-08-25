@@ -1,0 +1,38 @@
+# tm_analyzer.py dependencies
+# Install:  pip install -r requirements_tm_analyzer.txt
+#
+# Verified with Python 3.11 and: numpy 1.26.4 / pandas 2.2.3 / gensim 4.3.3 /
+# scikit-learn 1.5.2 / umap-learn 0.5.7 / sentence-transformers 3.2.1 /
+# plotly 5.24.1 / matplotlib 3.9.2 / wordcloud 1.9.4 / nltk 3.9.1
+
+# --- data handling -----------------------------------------------------------
+# gensim 4.x is not compatible with NumPy 2.x; keep numpy below 2 until gensim
+# ships a build that is.
+numpy>=1.23,<2
+pandas>=1.5
+tqdm>=4.65
+
+# --- NLP / preprocessing -----------------------------------------------------
+nltk>=3.8                  # tokenizer + POS tagger (noun filter)
+stop-words>=2018.7.23      # base English stop word list
+
+# --- topic modeling ----------------------------------------------------------
+gensim>=4.3                # LDA and c_v coherence
+scikit-learn>=1.2          # k-means clustering, silhouette
+umap-learn>=0.5            # 2D projection of document vectors
+# Required by the default --method LDA_BERT (and by --method BERT), which
+# embed documents with Sentence-BERT. Not needed for --method LDA.
+sentence-transformers>=2.2
+
+# --- visualization -----------------------------------------------------------
+matplotlib>=3.6
+wordcloud>=1.9
+plotly>=5.10
+
+# --- optional ----------------------------------------------------------------
+# Sentence-level language filter (English/French/Spanish/Chinese). Without it
+# the filter is skipped and every sentence is kept.
+# language-detector>=1.1
+
+# Typo correction, enabled only with --use-typo-correction.
+# symspellpy>=6.7

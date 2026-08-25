@@ -1,0 +1,15 @@
+# post_hoc_analyzer.py dependencies
+# Install:  pip install -r requirements_post_hoc_analyzer.txt
+#
+# Verified with Python 3.11 and: pandas 2.2.3 / networkx 3.4.2 /
+# matplotlib 3.9.2 / plotly 5.24.1 / openpyxl 3.1.5
+
+pandas>=1.5           # table handling
+networkx>=2.8         # co-authorship graphs, GML/GraphML/GEXF export
+matplotlib>=3.6       # print-ready yearly publication bar chart
+plotly>=5.10          # interactive publication charts
+openpyxl>=3.1         # only needed to read .xlsx input
+
+# --- optional ---------------------------------------------------------------
+# Static PNG export of the interactive charts, enabled with --png.
+# kaleido>=0.2.1
