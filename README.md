@@ -1,2 +1,0 @@
-# RTT
-Topic modeling tool
